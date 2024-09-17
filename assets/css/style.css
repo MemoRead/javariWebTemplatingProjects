@@ -1,0 +1,893 @@
+/*================
+GENERAL 
+================*/
+* {
+  max-width: 100%; /* Ensure no element exceeds the width of the viewport */
+  box-sizing: border-box; /* Ensure padding and border don't cause layout issues */
+}
+
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+.section {
+  padding: 10px 15px;
+}
+
+.offcanvas {
+  padding: 15px !important;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*================
+Loading Screen
+================*/
+#loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #333;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+body.loaded #loading-screen {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*================
+HEADER 
+================*/
+header {
+  position: fixed;
+  min-height: 7vh;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo-img {
+  width: 150px;
+  height: auto;
+}
+
+#offcanvasNavbar {
+  display: none;
+}
+
+.navbar {
+  margin-right: 20px;
+}
+
+.nav-link {
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #8b8b8b;
+}
+
+.dropdown-toggle {
+  color: #333 !important;
+}
+
+.dropdown-toggle:hover {
+  color: #8b8b8b !important;
+}
+
+.dropdown-menu {
+  background-color: #fff;
+  padding: 0;
+  border: 1px solid #ddd;
+  min-width: 250px;
+}
+
+.dropdown-item {
+  color: #333;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #8b8b8b;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+
+.btn-success {
+  background-color: #333;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #8b8b8b;
+}
+
+/*================= 
+MAIN
+=================*/
+/* hero */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.carousel-caption {
+  position: absolute;
+  z-index: 2;
+  bottom: 10%;
+  left: 20%;
+  right: 10%;
+  text-align: left;
+  color: #fff;
+}
+
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1; 
+}
+
+.carousel-caption h5 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.carousel-caption p {
+  font-size: 1.25rem;
+  margin-top: 10px;
+}
+
+.carousel-caption a.btn {
+  background-color: #8b8b8b;
+  margin-top: 15px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+}
+
+.carousel-caption a.btn:hover {
+  background-color: #333;
+}
+
+/* About Us */
+.about-us {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #C68C39;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Video container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background-color: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+a.btn.btn-find-out {
+  font-weight: bold;
+  color: #C68C39;
+  border: none;
+}
+
+a.btn.btn-find-out:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+/* Certifications */
+.our-certification {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+.certification-flex {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.certification-box {
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: tansform 0.3s ease, box-shadow 0.3s ease;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.certification-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.certification-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Social Projects Section */
+.social-projects {
+  background-color: #fff;
+  padding: 40px 20px;
+}
+
+.social-text {
+  font-size: 1.1rem;
+  text-align: justify;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 200px;
+  gap: 10px;
+}
+
+.masonry-grid .grid-item {
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.masonry-grid .grid-item:nth-child(2) {
+  grid-row: span 2;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  object-fit: cover;
+}
+
+.grid-item img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.btn-discover {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.btn-discover:hover {
+  background-color: #8b8b8b;
+}
+
+/* Integrated Organic Project */
+.integrated-organic-project {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.integrated-organic-project p {
+  font-size: 1.1rem;
+  color: #C68C39;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.certification-logo-flex {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.certificate-logo {
+  width: 60px;
+  height: auto;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Event Section */
+.event-section {
+  background-color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.event-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.events-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.event-card {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.event-content {
+  padding: 20px;
+}
+
+.event-tag {
+  background-color: #C68C39;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.event-card h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.event-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.event-read-more {
+  color: #C68C39;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.event-read-more:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.event-date {
+  font-size: 0.9rem;
+  color: #555;
+  text-align: left;
+  padding: 0 20px 20px;
+}
+
+.see-all-container {
+  margin-top: 30px;
+}
+
+.see-all-button {
+  background-color: #8b8b8b;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.see-all-button:hover {
+  background-color: #333;
+}
+
+
+/* News Section */
+.news-section {
+  background-color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.news-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.news-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.news-card {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.news-image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.news-content {
+  padding: 20px;
+}
+
+.news-tag {
+  background-color: #C68C39;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.news-card h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.news-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.news-read-more {
+  color: #C68C39;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.news-read-more:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.news-date {
+  font-size: 0.9rem;
+  color: #555;
+  text-align: left;
+  padding: 0 20px 20px;
+}
+
+/*==================
+PAGE ABOUT US
+==================*/
+
+
+/*==================
+PAGE SOCIAL EVENTS
+==================*/
+
+
+/*==================
+PAGE CONTACT US
+==================*/
+
+
+/*=================================
+PAGE PRODUCT ORGANIC COCONUT SUGAR
+=================================*/
+
+
+/*=======================================
+PAGE PRODUCT NATURAL COCONUT SUGAR SPICES
+=======================================*/
+
+
+/*=================================
+PAGE PRODUCT NATURAL ARENGA SUGAR
+=================================*/
+
+
+/*=================================
+PAGE PRODUCT NATURAL DRIVATIVES
+=================================*/
+
+
+/*=================================
+PAGE PRODUCT NATURAL CHARCOAL
+=================================*/
+
+
+/*=================================
+PAGE PRODUCT NATURAL COCO PIT
+=================================*/
+
+
+/*==================
+FOOTER
+==================*/
+.footer-section {
+  position: relative;
+  background-image: url('../img/footer.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 60px 0;
+  z-index: 1;
+}
+
+.footer-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+}
+
+.footer-logo img {
+  width: 250px;
+  height: auto;
+  background-color: #f8f9fa;
+  border-radius: 20px;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-text {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.footer-social-icons a {
+  color: #ccc;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+  color: #fff;
+}
+
+/* Tlak With Us Form */
+.form-control {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+}
+
+.form-control:focus {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-primary {
+  background-color: #333;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #8b8b8b;
+}
+
+/*================
+COPYRIGHT
+================*/
+.copyright {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #555;
+}
+
+.copyright-text {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 0;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/*================
+MEDIA QUERIES
+================*/
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  /* apply here */
+  header {
+    max-height: 5vh;
+  }
+
+  .collapse {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+  }
+  
+  .certification-box {
+    max-height: 50px;
+    background-color: none;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    width: 60px;
+  }
+}
+
+@media (max-width: 765.98px) {
+  .logo-img {
+    width: 70px;
+    height: auto;
+  }
+  .carousel-caption h5 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  .carousel-caption a.btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .about-title {
+    font-size: 1.1rem;
+  }
+  
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .social-text {
+    font-size: 1rem;
+  }
+
+  .integrated-organic-project p {
+    font-size: 1rem;
+  }
+
+  .footer-logo img {
+    width: 200px;
+  }
+
+  .footer-title {
+    font-size: 1.25rem;
+  }
+  
+  .certification-box {
+    max-height: 50px;
+    background-color: none;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    width: 60px;
+  }
+
+  .events-grid, .news-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event-card, .news-card {
+    width: 90%;
+  }
+
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  /* apply here */
+  header {
+    max-height: 6vh;
+  }
+
+  .logo-img {
+    width: 100px;
+    height: auto;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  #offcanvasNavbar {
+    display: block;
+  }
+
+  .offcanvas-body {
+    height: 100%;
+  }
+
+  .offcanvas-title {
+    font-weight: bolder;
+  }
+
+  /* Hide navigation links and contact button on small screens */
+  nav.d-lg-flex, .contact {
+    display: none;
+  }
+
+  .certification-flex {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+  }
+  
+  .certification-box {
+    padding: 2px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .masonry-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 70px;
+    margin-bottom: 20px;
+  }
+
+  .masonry-grid .grid-item:nth-child(2) {
+    grid-row: span 1;
+  }
+
+  .certification-logo-flex {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 2px;
+  }
+
+}
