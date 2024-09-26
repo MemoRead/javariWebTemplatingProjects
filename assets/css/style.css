@@ -631,7 +631,102 @@ PAGE PRODUCT ORGANIC COCONUT SUGAR
 /*=======================================
 PAGE PRODUCT NATURAL COCONUT SUGAR SPICES
 =======================================*/
+#header-image {
+  position: relative;
+  height: 50vh;
+  width: 100%;
+  overflow: hidden;
+}
 
+#header-image .background-image {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  animation: zoomOut 4s ease-out;
+  z-index: -999;
+}
+
+.background-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#header-image .card-img-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 150px;
+  align-items: left;
+  text-align: left;
+  color: #fff;
+}
+
+#header-image .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+#header-image .product-header-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.text-strong {
+  color: #dd9e45;
+}
+
+#header-image .product-description {
+  font-size: 1.2rem;
+  max-width: 60%;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.product-detail {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+.product-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #C68C39;
+  margin-bottom: 20px;
+}
+
+.product-text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.img-box {
+  max-width: 100%;
+  height: auto;
+  padding: 15px;
+}
+
+.product-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: contain;
+}
 
 /*=================================
 PAGE PRODUCT NATURAL ARENGA SUGAR
@@ -641,7 +736,42 @@ PAGE PRODUCT NATURAL ARENGA SUGAR
 /*=================================
 PAGE PRODUCT NATURAL DRIVATIVES
 =================================*/
+.line {
+  width: 100%;
+  height: 10px;
+  border-radius: 50px;
+  background-color: #555;
+  margin: 20px 0;
+}
 
+#product-features {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.benefit-list {
+  list-style-type: decimal;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.benefit-list li {
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+#product-features .certification-logo-flex {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#product-features .certificate-logo {
+  width: 100px;
+  height: auto;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
 
 /*=================================
 PAGE PRODUCT NATURAL CHARCOAL
@@ -769,6 +899,16 @@ MEDIA QUERIES
   .about {
     margin-top: 15vh;
   }
+
+  .benefit-list {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .benefit-list li {
+    margin-bottom: 8px;
+    text-align: justify;
+  }
 }
 
 /* `lg` applies to medium devices (tablets, less than 992px) */
@@ -850,7 +990,7 @@ MEDIA QUERIES
 
 @media (max-width: 768.98px) {
   .logo-img {
-    width: 70px;
+    min-width: 70px;
     height: auto;
   }
   .carousel-caption h5 {
@@ -922,6 +1062,32 @@ MEDIA QUERIES
     padding: 50px;
   }
 
+  #header-image .card-img-overlay {
+    padding: 80px;
+  }
+  
+  #header-image .product-header-title {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  #header-image .product-description {
+    font-size: 1rem;
+    max-width: 60%;
+  }
+
+  .product-detail {
+    padding: 20px 10px;
+  }
+  
+  .product-title {
+    font-size: 1.8rem;
+  }
+  
+  .product-text {
+    font-size: 1.1rem;
+  }
+
 }
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
@@ -934,6 +1100,34 @@ MEDIA QUERIES
   .collapse {
     background-color: #f8f9fa;
     padding: 1rem 0;
+  }
+
+  #header-image .card-img-overlay {
+    padding: 40px;
+  }
+  
+  #header-image .product-header-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  #header-image .product-description {
+    font-size: 0.8rem;
+    max-width: 70%;
+  }
+  
+  .product-text {
+    font-size: 1rem;
+  }
+
+  .benefit-list {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .benefit-list li {
+    margin-bottom: 5px;
+    text-align: justify;
   }
   
 }
