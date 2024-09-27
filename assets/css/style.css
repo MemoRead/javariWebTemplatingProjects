@@ -28,6 +28,19 @@ a {
   scroll-behavior: smooth;
 }
 
+.under-construction {
+  display: block;
+  padding: 100px;
+  height: 100vh;
+  width: 100%;
+}
+
+.under-construction img {
+  object-fit: cover;
+  width: 70%;
+  height: 70%;
+}
+
 /*================
 Loading Screen
 ================*/
@@ -760,6 +773,30 @@ PAGE PRODUCT NATURAL DRIVATIVES
   text-align: justify;
 }
 
+.section-sub-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #C68C39;
+  margin-bottom: 20px;
+}
+
+.hc {
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 20px 25px;
+}
+
+.hc-list {
+  list-style-type: decimal;
+  font-size: 1rem;
+  color: #555;
+}
+
+.hc-list li {
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
 #product-features .certification-logo-flex {
   background-color: #fff;
   border-radius: 20px;
@@ -771,6 +808,104 @@ PAGE PRODUCT NATURAL DRIVATIVES
   height: auto;
   padding: 10px;
   transition: transform 0.3s ease;
+}
+
+#product-detail .certification-logo-flex {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#product-detail .certificate-logo {
+  width: 100px;
+  height: auto;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.fetures-section {
+  background-color: #f8f9fa;
+  border-radius: 30px;
+}
+
+.features-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.features-title span {
+  color: #C68C39;
+}
+
+.variety-img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.feature-icon, .storage-icon {
+  color: #C68C39;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.use-img {
+  width: 150px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.feature-item, .use-item {
+  text-align: center;
+}
+
+.feature-item h3, .use-item h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.health-benefits-section table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.culinary-uses-section h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+.storage-info {
+  border-radius: 20px;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+#product-features-2 {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+#product-features-2 .fetures-section {
+  background-color: #fff;
+  border-radius: 30px;
+}
+
+#product-features-2 .storage-info {
+  border-radius: 20px;
+  text-align: center;
+  padding: 1rem;
+  background-color: #fff;
 }
 
 /*=================================
@@ -989,6 +1124,19 @@ MEDIA QUERIES
 }
 
 @media (max-width: 768.98px) {
+  .under-construction {
+    display: block;
+    padding: 50px;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .under-construction img {
+    object-fit: cover;
+    width: 70%;
+    height: 70%;
+  }
+
   .logo-img {
     min-width: 70px;
     height: auto;
@@ -1128,6 +1276,10 @@ MEDIA QUERIES
   .benefit-list li {
     margin-bottom: 5px;
     text-align: justify;
+  }
+
+  .varieties-section .product-text {
+    margin-top: 15px;
   }
   
 }
