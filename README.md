@@ -8,7 +8,7 @@
     made with <strong>LOVE</strong> by Yunan Adi Tiyanto
   </p>
 
-  <a href="https://memoread.github.io/javariWebTemplatingProjects/" style="text-decoration:none">Demo Projects</a>
+  <a href="https://memoread.github.io/javariWebTemplatingProjects/" style="text-decoration: none;">Demo Projects</a>
   
   <h3>Prefiew Templates:</h3>
 
