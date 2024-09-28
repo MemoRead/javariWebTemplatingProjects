@@ -853,6 +853,20 @@ PAGE PRODUCT NATURAL DRIVATIVES
   margin-bottom: 1rem;
 }
 
+.features-benefit-icon {
+  color: #C68C39;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#product-features .features-benefit-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
 .use-img {
   width: 150px;
   height: auto;
