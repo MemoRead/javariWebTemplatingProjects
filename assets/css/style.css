@@ -731,6 +731,88 @@ PAGE PRODUCT NATURAL COCONUT SUGAR SPICES
   padding: 15px;
 }
 
+=======
+
+#header-image .background-image {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  animation: zoomOut 4s ease-out;
+  z-index: -999;
+}
+
+.background-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#header-image .card-img-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 150px;
+  align-items: left;
+  text-align: left;
+  color: #fff;
+}
+
+#header-image .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+#header-image .product-header-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.text-strong {
+  color: #dd9e45;
+}
+
+#header-image .product-description {
+  font-size: 1.2rem;
+  max-width: 60%;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.product-detail {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+.product-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #C68C39;
+  margin-bottom: 20px;
+}
+
+.product-text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.img-box {
+  max-width: 100%;
+  height: auto;
+  padding: 15px;
+}
+
 .product-img {
   display: flex;
   align-items: center;
@@ -865,6 +947,85 @@ PAGE PRODUCT NATURAL DRIVATIVES
   font-weight: bold;
   color: #333;
   margin-bottom: 20px;
+}
+
+.use-img {
+  width: 150px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.feature-item, .use-item {
+  text-align: center;
+}
+
+.feature-item h3, .use-item h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.health-benefits-section table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.culinary-uses-section h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+.storage-info {
+  border-radius: 20px;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+#product-features-2 {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+#product-features-2 .fetures-section {
+  background-color: #fff;
+  border-radius: 30px;
+}
+
+=======
+
+.fetures-section {
+  background-color: #f8f9fa;
+  border-radius: 30px;
+}
+
+.features-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.features-title span {
+  color: #C68C39;
+}
+
+.variety-img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.feature-icon, .storage-icon {
+  color: #C68C39;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .use-img {
