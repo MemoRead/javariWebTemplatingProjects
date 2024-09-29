@@ -725,12 +725,6 @@ PAGE PRODUCT NATURAL COCONUT SUGAR SPICES
   text-align: justify;
 }
 
-.img-box {
-  max-width: 100%;
-  height: auto;
-  padding: 15px;
-}
-
 #header-image .background-image {
   top: 0;
   left: 0;
@@ -824,6 +818,12 @@ PAGE PRODUCT NATURAL COCONUT SUGAR SPICES
 .img-box-2 {
   width: 100%;
   height: 300px;
+  padding: 15px;
+}
+
+.img-box-3 {
+  width: 600px;
+  height: 500px;
   padding: 15px;
 }
 
@@ -1468,6 +1468,12 @@ MEDIA QUERIES
 
   .varieties-section .product-text {
     margin-top: 15px;
+  }
+
+  .img-box-3 {
+    width: 400px;
+    height: 300px;
+    padding: 15px;
   }
   
 }
