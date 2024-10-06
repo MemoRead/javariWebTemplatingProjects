@@ -359,6 +359,17 @@ a.btn.btn-find-out:hover {
   height: 50vh;
 }
 
+.grid-container-discover {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.6rem;
+  grid-template-areas: 
+  "img1 img3"
+  "img2 img3";
+  height: 50vh;
+}
+
 /* Grid Area Assignment */
 #img1 { grid-area: img1; }
 #img2 { grid-area: img2; }
@@ -1467,7 +1478,16 @@ MEDIA QUERIES
   }
 
   .grid-item {
+    border-radius: 10px;
     height: auto;
+  }
+
+  .grid-container-discover {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas: 
+    "img1 img2 img3";
+    height: 10vh;
   }
 
 }
