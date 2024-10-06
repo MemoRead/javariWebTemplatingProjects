@@ -258,6 +258,7 @@ MAIN
   overflow: hidden;
   max-width: 100%;
   background-color: #000;
+  border-radius: 20px;
 }
 
 .video-container iframe {
@@ -347,32 +348,61 @@ a.btn.btn-find-out:hover {
   margin-bottom: 20px;
 }
 
-.masonry-grid {
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.6rem;
+  grid-template-areas: 
+  "img1 img3 img4 img5 img7"
+  "img2 img3 img6 img6 img7";
+  height: 50vh;
+}
+
+.grid-container-discover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 200px;
-  gap: 10px;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.6rem;
+  grid-template-areas: 
+  "img1 img3"
+  "img2 img3";
+  height: 50vh;
 }
 
-.masonry-grid .grid-item {
+/* Grid Area Assignment */
+#img1 { grid-area: img1; }
+#img2 { grid-area: img2; }
+#img3 { grid-area: img3; }
+#img4 { grid-area: img4; }
+#img5 { grid-area: img5; }
+#img6 { grid-area: img6; }
+#img7 { grid-area: img7; }
+
+.grid-item {
   overflow: hidden;
-  border-radius: 10px;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.masonry-grid .grid-item:nth-child(2) {
-  grid-row: span 2;
+  border-radius: 20px;
 }
 
 .grid-item img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   transition: transform 0.4s ease, opacity 0.4s ease;
-  object-fit: contain;
+}
+
+.grid-item.landscape {
+  grid-row: 1;
+}
+
+.grid-item.portrait {
+  grid-row: span 2;
+}
+
+.grid-item.wide {
+  grid-column: span 2;
 }
 
 .grid-item img:hover {
@@ -512,7 +542,6 @@ a.btn.btn-find-out:hover {
   background-color: #333;
 }
 
-
 /* News Section */
 .news-section {
   background-color: #fff;
@@ -602,18 +631,39 @@ a.btn.btn-find-out:hover {
 /*==================
 PAGE ABOUT US
 ==================*/
+#header-section-image .background-section-image {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  animation: zoomOut 4s ease-out;
+  z-index: -999;
+}
+
+.background-section-image img {
+  object-fit: cover;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#header-section-image .card-img-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 150px;
+  align-items: left;
+  text-align: left;
+  color: #fff;
+}
+
 .welcome-section {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-}
-
-.welcome {
-  position: absolute;
-  text-align: center;
-  padding: 150px;
-  color: #fff;
 }
 
 .btn-contact {
@@ -626,6 +676,51 @@ PAGE ABOUT US
   color: #fff;
 }
 
+.vision-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #C68C39;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.visi-misi {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.mision-list {
+  list-style-type: disc;
+  font-size: 1.3rem;
+  color: #555;
+}
+
+.mision-list li {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: justify;
+  color: #555;
+}
+
+.misi-img-box {
+  max-width: 100%;
+  height: auto;
+  padding: 16px;
+}
+
+.misi-img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: contain;
+}
+
+#internal-control-system {
+  background-color: #f8f9fa;
+  padding-top: 50px;
+}
 /*==================
 PAGE SOCIAL EVENTS
 ==================*/
@@ -723,51 +818,6 @@ PAGE PRODUCT NATURAL COCONUT SUGAR SPICES
   line-height: 1.5;
   margin-bottom: 15px;
   text-align: justify;
-}
-
-#header-image .background-image {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50vh;
-  animation: zoomOut 4s ease-out;
-  z-index: -999;
-}
-
-.background-image img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-#header-image .card-img-overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 150px;
-  align-items: left;
-  text-align: left;
-  color: #fff;
-}
-
-#header-image .container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-}
-
-#header-image .product-header-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.text-strong {
-  color: #dd9e45;
-}
-
-#header-image .product-description {
-  font-size: 1.2rem;
-  max-width: 60%;
 }
 
 @keyframes zoomOut {
@@ -1219,10 +1269,6 @@ MEDIA QUERIES
 ================*/
 
 @media (max-width: 1186px) {
-  .about {
-    margin-top: 15vh;
-  }
-
   .benefit-list {
     font-size: 1rem;
     color: #555;
@@ -1231,6 +1277,16 @@ MEDIA QUERIES
   .benefit-list li {
     margin-bottom: 8px;
     text-align: justify;
+  }
+}
+
+@media (max-width: 1024px) {
+  #header-section-image h3 {
+    font-size: 1.5rem;
+  }
+
+  #header-section-image .video-container {
+    margin-top: 50px;
   }
 }
 
@@ -1284,25 +1340,11 @@ MEDIA QUERIES
     align-items: center;
   }
 
-  .masonry-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 70px;
-    margin-bottom: 20px;
-  }
-
-  .masonry-grid .grid-item:nth-child(2) {
-    grid-row: span 1;
-  }
-
   .certification-logo-flex {
     width: 100%;
     background-color: #fff;
     border-radius: 20px;
     padding: 2px;
-  }
-
-  .about {
-    margin-top: 10vh;
   }
 
   .welcome {
@@ -1423,6 +1465,36 @@ MEDIA QUERIES
   .product-text {
     font-size: 1.1rem;
   }
+  
+  #header-section-image .card-img-overlay {
+    padding: 50px;
+  }
+
+  .vision-title {
+    font-size: 1rem;
+  }
+  
+  .mision-list {
+    font-size: 1rem;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .grid-item {
+    border-radius: 10px;
+    height: auto;
+  }
+
+  .grid-container-discover {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas: 
+    "img1 img2 img3";
+    height: 10vh;
+  }
 
 }
 
@@ -1469,6 +1541,36 @@ MEDIA QUERIES
   .varieties-section .product-text {
     margin-top: 15px;
   }
+
+  #header-section-image .background-section-image {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    animation: zoomOut 4s ease-out;
+    z-index: -999;
+  }
+  
+  .background-section-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  #header-section-image .welcome {
+    padding: 10px;
+  }
+  
+  #header-section-image .card-img-overlay {
+    padding: 20px;
+  }
+
+  #header-section-image h3 {
+    display: none;
+  }
+
+  #header-section-image .video-container {
+    margin-top: 50px;
 
   .img-box-3 {
     width: 400px;
