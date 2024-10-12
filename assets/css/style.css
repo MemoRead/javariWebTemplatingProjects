@@ -244,7 +244,7 @@ MAIN
 .about-text {
   font-size: 1.1rem;
   color: #555;
-  line-height: 1.5;
+  line-height: 1.8;
   margin-bottom: 15px;
   text-align: justify;
 }
@@ -433,7 +433,7 @@ a.btn.btn-find-out:hover {
 .integrated-organic-project p {
   font-size: 1.1rem;
   color: #C68C39;
-  line-height: 1.5;
+  line-height: 1.8;
   margin-bottom: 15px;
   text-align: justify;
 }
@@ -631,6 +631,10 @@ a.btn.btn-find-out:hover {
 /*==================
 PAGE ABOUT US
 ==================*/
+#about-us span {
+  color: #C68C39;
+}
+
 #header-section-image .background-section-image {
   top: 0;
   left: 0;
@@ -721,9 +725,70 @@ PAGE ABOUT US
   background-color: #f8f9fa;
   padding-top: 50px;
 }
+
 /*==================
 PAGE SOCIAL EVENTS
 ==================*/
+#header-project-image {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#header-project-image .project-background-image {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  animation: zoomOut 4s ease-out;
+  z-index: -999;
+}
+
+.project-background-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#header-project-image .card-img-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 150px;
+  align-items: left;
+  text-align: left;
+  color: #fff;
+}
+
+#header-project-image .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+#header-project-image .project-header-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.text-strong {
+  color: #dd9e45;
+}
+
+#header-project-image .project-description {
+  font-size: 1.2rem;
+  max-width: 60%;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 
 /*==================
@@ -762,7 +827,7 @@ PAGE PRODUCT NATURAL COCONUT SUGAR SPICES
 }
 
 #header-image .card-img-overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 150px;
   align-items: left;
   text-align: left;
@@ -780,10 +845,6 @@ PAGE PRODUCT NATURAL COCONUT SUGAR SPICES
 #header-image .product-header-title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-}
-
-.text-strong {
-  color: #dd9e45;
 }
 
 #header-image .product-description {
@@ -1150,12 +1211,6 @@ PAGE PRODUCT NATURAL DRIVATIVES
 PAGE PRODUCT NATURAL CHARCOAL
 =================================*/
 
-
-/*=================================
-PAGE PRODUCT NATURAL COCO PIT
-=================================*/
-
-
 /*==================
 FOOTER
 ==================*/
@@ -1453,6 +1508,19 @@ MEDIA QUERIES
     font-size: 1rem;
     max-width: 60%;
   }
+  
+  #header-project-image .card-img-overlay {
+    padding: 50px;
+  }
+  
+  #header-project-image .project-header-title {
+    font-size: 1.7rem;
+  }
+  
+  #header-project-image .project-description {
+    font-size: 1rem;
+    max-width: 60%;
+  }
 
   .product-detail {
     padding: 20px 10px;
@@ -1523,6 +1591,19 @@ MEDIA QUERIES
     font-size: 0.8rem;
     max-width: 70%;
   }
+
+  #header-project-image .card-img-overlay {
+    padding: 40px;
+  }
+  
+  #header-project-image .project-header-title {
+    font-size: 1.5rem;
+  }
+  
+  #header-project-image .project-description {
+    font-size: 0.8rem;
+    max-width: 70%;
+  }
   
   .product-text {
     font-size: 1rem;
@@ -1571,6 +1652,7 @@ MEDIA QUERIES
 
   #header-section-image .video-container {
     margin-top: 50px;
+  }
 
   .img-box-3 {
     width: 400px;
